@@ -18,6 +18,14 @@ def createData(coords_list):
     return msg
 
 
+def zeroExtend(inputList):
+    output = []
+    for tup in inputList:
+        tup = (*tup, 0)
+        output.append(tup)
+    return output
+
+
 def startClient():
     receiver_process = Process(target=receiver, args=(conn1,))
     receiver_process.start()
